@@ -27,7 +27,7 @@ async def where_open(message: types.Message):
                            "метро Лук'янівка, вул.Татарська 10")
 
 
-@dp.message_handler(commands=['/Меню'])
+# @dp.message_handler(commands=['/Меню'])
 async def wok_menu_command(message: types.Message):
     await sqlite_dp.sql_read(message)
 
@@ -36,4 +36,4 @@ def register_handlers_client(dp: Dispatcher):
     dp.register_message_handler(command_start, commands=['start', 'help'])
     dp.register_message_handler(when_open, commands=['Режим_роботи'])
     dp.register_message_handler(where_open, commands=['Де_ми_?'])
-    dp.register_message_handler(wok_menu_command, commands=['Меню'])
+    dp.register_message_handler(wok_menu_command, commands=['/Меню'])
